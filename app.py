@@ -43,7 +43,7 @@ try:
     # Gemini API キー
     gemini_api_key = st.secrets["gemini_api_key"]
     genai.configure(api_key=gemini_api_key)
-    gemini_model = genai.GenerativeModel('gemini-pro')
+    gemini_model = genai.GenerativeModel('gemini-1.5-pro-latest')
     st.sidebar.success("Gemini API 認証 OK")
     can_summarize = True
 
