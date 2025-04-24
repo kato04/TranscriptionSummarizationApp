@@ -61,13 +61,18 @@ if uploaded_file is not None:
                 content = uploaded_file.read()
                 audio = speech.RecognitionAudio(content=content)
 
-                # 話者分離を有効にした RecognitionConfig
+                # 話者分離を有効にした RecognitionConfig (ネスト構造を使用)
+                diarization_config = speech.SpeakerDiarizationConfig(
+                    enable_speaker_diarization=True,
+                    min_speaker_count=2,  # 例: 最小話者数を設定 (任意ですが設定推奨)
+                    max_speaker_count=6,  # 例: 最大話者数を設定 (任意ですが設定推奨)
+                )
+
                 config = speech.RecognitionConfig(
                     language_code="ja-JP",
                     enable_automatic_punctuation=True,
-                    enable_speaker_diarization=True, # 話者分離を有効化
-                    # diarization_speaker_count=num_speakers, # 話者数を指定する場合
-                    # model="telephony", # 必要に応じてモデル指定
+                    diarization_config=diarization_config, # ★★★ ネストした設定オブジェクトを渡すように変更
+                    # model="telephony",
                 )
 
                 st.info("Google Cloud STT で文字起こしを実行中...")
