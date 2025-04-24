@@ -1,4 +1,5 @@
 streamlit
 google-cloud-speech
-google-cloud-storage # これを追加
+google-cloud-storage
 google-generativeai
+pydub
