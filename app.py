@@ -11,7 +11,7 @@ import time
 
 # ----- GCS バケット名を設定 -----
 # 重要: このバケット名は、あなたの GCP プロジェクト内に実際に存在する GCS バケットの名前に置き換えてください！
-GCS_BUCKET_NAME = "your-gcs-bucket-name-here" # ← ★★★★★ 必ず書き換えてください ★★★★★
+GCS_BUCKET_NAME = "transcriptionsummarizationapp" # ← ★★★★★ 必ず書き換えてください ★★★★★
 
 # ----- アプリのタイトル -----
 st.title("🚀 会議文字起こし＆要約アプリ (Google Cloud STT + Gemini)")
