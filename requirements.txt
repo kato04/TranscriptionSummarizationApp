@@ -1,0 +1,4 @@
+streamlit
+google-cloud-speech
+google-auth # 認証に必要
+google-generativeai # Gemini API 用
