@@ -102,7 +102,7 @@ if uploaded_file is not None and speech_client and storage_client:
                 )
 
                 # 非同期認識を開始
-                operation = speech_client.longRunningRecognize(config=config, audio=audio)
+                operation = speech_client.long_running_recognize(config=config, audio=audio) # ← アンダースコア(_)に変更
                 st.info("非同期文字起こし処理を開始しました。完了まで時間がかかります...")
 
                 # オペレーションの完了を待つ (タイムアウトを設定)
