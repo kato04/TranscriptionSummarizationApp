@@ -1,0 +1,2 @@
+# TranscriptionSummarizationApp
+ああ2回目なんだ
