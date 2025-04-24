@@ -97,7 +97,7 @@ if uploaded_file is not None and speech_client and storage_client:
                 config = speech.RecognitionConfig(
                     language_code="ja-JP",
                     enable_automatic_punctuation=True,
-                    diarization_config=diarization_config,
+                    # diarization_config=diarization_config,
                     # encoding や sample_rate_hertz は GCS 上のファイルから自動判別されることが多い
                 )
 
