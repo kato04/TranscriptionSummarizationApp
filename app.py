@@ -13,16 +13,6 @@ st.write("音声ファイルをアップロードし、文字起こし、話者�
 try:
     # Google Cloud STT 用の認証情報
     google_credentials_json_str = st.secrets["google_credentials_json"]
-    # --- デバッグ用コード ここから ---
-    st.error("↓↓↓ 以下はデバッグ用の表示です。機密情報が含まれます！確認後は必ずこのコードを削除してください！ ↓↓↓")
-    st.subheader("🚨 Secrets Debug: `google_credentials_json` の実際の値")
-    st.text_area(
-        "Streamlit が Secrets から読み込んだ文字列:",
-        google_credentials_json_str,
-        height=400 # 表示エリアの高さを調整
-    )
-    st.error("↑↑↑ デバッグ表示ここまで。確認したら必ずコードを削除してください！ ↑↑↑")
-    # --- デバッグ用コード ここまで ---
     google_credentials_dict = json.loads(google_credentials_json_str)
     credentials = service_account.Credentials.from_service_account_info(google_credentials_dict)
     speech_client = speech.SpeechClient(credentials=credentials)
