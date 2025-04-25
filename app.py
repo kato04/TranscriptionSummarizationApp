@@ -71,7 +71,7 @@ uploaded_file = st.file_uploader(
 if uploaded_file is not None and speech_client and storage_client:
     st.audio(uploaded_file, format=uploaded_file.type)
 
-    if st.button("文字起こしと要約を実行 (FLAC変換あり)"):
+    if st.button("文字起こしと要約を実行"):
         gcs_uri = None
         blob_name = None
         converted_file_data = None # 変換後のデータ用
