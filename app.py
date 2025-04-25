@@ -176,7 +176,7 @@ if uploaded_file is not None and speech_client and storage_client:
                             with st.spinner("Gemini API で要約を生成中..."):
                                 prompt = f"""
                                 以下の会議書き起こしテキストを分析し、主要な議題とそれぞれの内容の要点を箇条書きで簡潔にまとめてください。
-
+                                まずは書き起こしテキストをログ形式で出力した後，その内容の要点をまとめてください。
                                 --- 書き起こしテキスト ---
                                 {full_raw_text.strip()}
                                 --- 要約 ---
